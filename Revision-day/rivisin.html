@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom first Revision day</title>
+</head>
+<body>
+    <p class="para">paragraph</p>
+    <p class="para">paragraph2</p>
+    <p class="para">paragraph3</p>
+    <h2 class="head" id="bangla">This is heading </h2>
+    <h2 class="head1">This is heading </h2>
+    <h2 class="head2">This is heading </h2>
+    <h2 class="head4">This is heading </h2>
+    <a href="#" id="link" name="mydul">DOM link</a>
+    <section id ="container">
+        <h2>Bangladeshi Products</h2>
+    </section>
+    <script>
+        let linkAttributeGet = document.getElementById('link');
+        console.log(linkAttributeGet.getAttribute('id'))
+        // linkAttributeGet.removeAttribute('name')
+
+        let allPara = document.getElementsByTagName('p');
+        for(let para of allPara){
+            if(para.innerText === 'paragraph2'){
+                para.style.backgroundColor = 'pink'
+            }
+            else{
+                para.style.backgroundColor = 'red';
+                para.style.width = '50%'
+            }
+        }
+        let headings = document.querySelectorAll('h2');
+        for(let heading of headings ){
+            console.log(heading.className)
+        }
+        let setHeadAttribute = document.getElementById('bangla');
+        setHeadAttribute.setAttribute('class','my-class')
+        setHeadAttribute.classList.add('bangladesh');
+
+        let containterSelect = document.getElementById('container');
+        containterSelect.style.border = `1px solid gray`;
+        containterSelect.style.padding = `25px`;
+        let myContainerElement = document.createElement('div');
+        myContainerElement.innerHTML = `
+            <ul>
+                <li> Item one </li>
+                <li> Item two</li>
+                <li> Item three </li>
+                <li> Item four </li>
+                <li> Item five </li>
+                <li> Item six </li>
+            </ul>
+        `
+        containterSelect.appendChild(myContainerElement)
+    </script>
+</body>
+</html>

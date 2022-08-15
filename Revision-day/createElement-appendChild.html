@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element and Append Child Relation</title>
+</head>
+<body>
+    <main class="main-container">
+        <section>
+            <h1>MY INFO</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> In, nihil. Consequuntur, quod quasi corrupti dolore ipsum eveniet in,<br> voluptatem excepturi quaerat voluptates perferendis, tempore at?</p>
+        </section>
+    </main>
+    
+    <script>
+        let container = document.querySelector('.main-container');
+        let sectionCreate = document.createElement('section');
+            sectionCreate.innerHTML = `
+            <h1> MY NEW INFO </h1>
+            <p>It new section text. it also create BY dom element document.create element</p>`;
+        container.appendChild(sectionCreate)
+    </script>
+</body>
+</html>

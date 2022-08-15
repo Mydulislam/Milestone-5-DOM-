@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChildNodes</title>
+</head>
+<body>
+    <ul id="ul-list">
+        <h2>Our Menu</h2>
+        <li><a href="">home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact us</a></li>
+        <li><a href="">Gallary</a></li>
+        <h2>End Menu</h2>
+    </ul>
+    <script>
+        let nodeChild = document.getElementById('ul-list');
+        console.log(nodeChild.childNodes) // [text, h2, text, li, text, li, text, li, text, li, text, h2, text]
+        console.log(nodeChild.firstChild) // expected output 'text'
+        console.log(nodeChild.lastChild) // expected output 'text'
+        console.log(nodeChild.children) // expected ouptut [h2,li,li,li,li,h2]
+        let liSelect = document.querySelector('li');
+        console.log(liSelect.nextSibling) // #text
+        console.log(liSelect.nextElementSibling) // li
+        console.log(liSelect.previousSibling) // #text 
+        console.log(liSelect.previousElementSibling) // h2 
+        console.log(liSelect.parentNode) // <ul id='ul-list'>...</ul>
+        console.log(nodeChild.parentElement) // body
+    </script>
+</body>
+</html>

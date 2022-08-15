@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 25 Practices</title>
+</head>
+<body>
+    <p id="info">Hey Mydul islam. ami tomake dekhe nibo</p>
+    <input type="text" id="input-field">
+    <button id="delete-button" disabled placeholder="please type delete">Delete</button>
+    <script>
+        document.getElementById('input-field').addEventListener('mousemove',function(event){
+            let inputValue = event.target.value;
+            let textLower = document.getElementById('input-field').value = inputValue.toLowerCase();
+            inputValue = textLower;
+            const buttonSelect = document.getElementById('delete-button');
+            if(inputValue === 'delete'){
+                buttonSelect.removeAttribute('disabled')
+                
+            }
+            else{
+                buttonSelect.setAttribute('disabled',true)
+            }
+        })
+        document.getElementById('delete-button').addEventListener('click', function(){
+            let inputField = document.getElementById('input-field');
+           const myInfo = document.getElementById('info');
+           myInfo.style.display = 'none' 
+           inputField.value = ''
+        })
+    </script>
+</body>
+</html>
